@@ -48,7 +48,7 @@ def upload_file():
         return jsonify({"error": "Invalid file type"}), 400
 
 #返回生成的图像
-@app.route('/result/<path:filename>', methods=['GET'])
+@app.route('/result/<filename>', methods=['GET'])
 def get_file(filename):
     try:
         return send_from_directory(app.config['MIA_IMAGE_FOLDER'], filename)
